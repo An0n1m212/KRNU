@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.7">
+  <diagram id="FileProcessingFlow" name="File Processing Flow">
+    <mxGraphModel dx="1418" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Start Main" vertex="1">
+          <mxGeometry height="60" width="120" x="320" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="init_locale" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="setlocale(LC_ALL, ...)" vertex="1">
+          <mxGeometry height="40" width="160" x="300" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="create_objs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Create Array files[10]&#xa;Initialize 10 FILE_C objects" vertex="1">
+          <mxGeometry height="60" width="180" x="290" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="assign_vals" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Assign specific files:&#xa;files[0]..files[5] (via constr)&#xa;files[6]..files[9] (via assignment)" vertex="1">
+          <mxGeometry height="60" width="200" x="280" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="out_count" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Output: Total objects created" vertex="1">
+          <mxGeometry height="50" width="200" x="280" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="call_input_start" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="start_time = getInputTime(&quot;Start date&quot;)" vertex="1">
+          <mxGeometry height="50" width="220" x="270" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="call_input_end" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="end_time = getInputTime(&quot;End date&quot;)" vertex="1">
+          <mxGeometry height="50" width="220" x="270" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="call_query" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="queryFiles(files, 10, start, end)&#xa;[Filter by date &amp; Sort by size]" vertex="1">
+          <mxGeometry height="60" width="220" x="270" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="out_end" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Output: End execution&#xa;Output: Remaining objects count" vertex="1">
+          <mxGeometry height="60" width="220" x="270" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="End Main" vertex="1">
+          <mxGeometry height="60" width="120" x="320" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="start" target="init_locale">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="init_locale" target="create_objs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="create_objs" target="assign_vals">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="assign_vals" target="out_count">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="out_count" target="call_input_start">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="call_input_start" target="call_input_end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="call_input_end" target="call_query">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="call_query" target="out_end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="out_end" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

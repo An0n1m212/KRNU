@@ -1,0 +1,6 @@
+Array products
+12345678, Iphone 16 Pro, 10
+12233344, Iphone XR, 5
+123456789, Iphone 11 Pro, 10
+12233344, Iphone 17 Pro, 5
+220394388, Iphone 15 Pro, 30

@@ -1,0 +1,281 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.7">
+  <diagram name="UkrFlowchartHex" id="Ukr_Hex_Flow">
+    <mxGraphModel dx="1182" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Початок" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="init_block" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="Створення product (статично)&#xa;const int N = 5&#xa;Створення масиву вказівників arrProduct" vertex="1">
+          <mxGeometry height="60" width="200" x="300" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="manual_alloc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ручне виділення пам&#39;яті для&#xa;arrProduct[0] та arrProduct[1]" vertex="1">
+          <mxGeometry height="50" width="200" x="300" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="hex_loop1" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (i = 2; i &lt; N; ++i)" vertex="1">
+          <mxGeometry height="60" width="200" x="300" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="body_loop1" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="Вивід: &quot;Enter info&quot;&#xa;Створення new Product&#xa;Виклик input()" vertex="1">
+          <mxGeometry height="65" width="160" x="560" y="287.5" as="geometry" />
+        </mxCell>
+        <mxCell id="info_out" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: Інформація про продукти&#xa;Вивід: Product::getCount()" vertex="1">
+          <mxGeometry height="50" width="200" x="300" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="hex_loop2" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (i = 0; i &lt; N; ++i)" vertex="1">
+          <mxGeometry height="60" width="200" x="300" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="body_loop2" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="Виклик arrProduct[i]-&gt;print()" vertex="1">
+          <mxGeometry height="50" width="160" x="560" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="file_open" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Відкриття файлу &quot;product.txt&quot;" vertex="1">
+          <mxGeometry height="40" width="200" x="300" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="check_file" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="if (fout.is_open())" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="err_file" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: Помилка відкриття&#xa;return 1" vertex="1">
+          <mxGeometry height="50" width="160" x="520" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="hex_loop3" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (i = 0; i &lt; N; ++i)" vertex="1">
+          <mxGeometry height="60" width="200" x="300" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="body_loop3" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="Конвертація в рядок (ToString)&#xa;Запис у файл&#xa;Видалення буфера" vertex="1">
+          <mxGeometry height="50" width="180" x="560" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="init_search" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Вивід: Список &quot;Iphone&quot;&#xa;found_count = 0" vertex="1">
+          <mxGeometry height="50" width="160" x="320" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="hex_loop4" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (i = 0; i &lt; N; ++i)" vertex="1">
+          <mxGeometry height="60" width="200" x="300" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_search" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="if (name &amp;&amp;&#xa;strstr(name, &quot;Iphone&quot;))" vertex="1">
+          <mxGeometry height="60" width="180" x="540" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="action_search" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Виклик print()&#xa;++found_count" vertex="1">
+          <mxGeometry height="50" width="120" x="760" y="915" as="geometry" />
+        </mxCell>
+        <mxCell id="check_found" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="if (found_count == 0)" vertex="1">
+          <mxGeometry height="50" width="150" x="325" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="msg_not_found" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: Нічого не знайдено" vertex="1">
+          <mxGeometry height="40" width="170" x="530" y="1015" as="geometry" />
+        </mxCell>
+        <mxCell id="hex_loop5" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (i = 0; i &lt; N; ++i)" vertex="1">
+          <mxGeometry height="60" width="200" x="300" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="body_loop5" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="Видалення пам&#39;яті&#xa;(delete arrProduct[i])" vertex="1">
+          <mxGeometry height="50" width="160" x="560" y="1095" as="geometry" />
+        </mxCell>
+        <mxCell id="final_block" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: Кількість об&#39;єктів&#xa;Очікування Enter" vertex="1">
+          <mxGeometry height="50" width="200" x="300" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Кінець" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="1270" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" target="init_block">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="init_block" target="manual_alloc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2b" edge="1" parent="1" source="manual_alloc" target="hex_loop1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="hex_loop1" target="body_loop1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3_lbl" connectable="0" parent="e3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Тіло циклу" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="body_loop1" style="rounded=0;curved=0;" target="hex_loop1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="270" />
+              <mxPoint x="400" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="hex_loop1" target="info_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5_lbl" connectable="0" parent="e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Вихід" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="info_out" target="hex_loop2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="hex_loop2" target="body_loop2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_lbl" connectable="0" parent="e7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Тіло циклу" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="body_loop2" style="rounded=0;curved=0;" target="hex_loop2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="450" />
+              <mxPoint x="400" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="hex_loop2" target="file_open">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9_lbl" connectable="0" parent="e9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Вихід" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="file_open" target="check_file">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="check_file" target="err_file">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11_lbl" connectable="0" parent="e11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ні" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="check_file" target="hex_loop3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12_lbl" connectable="0" parent="e12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Так" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="hex_loop3" target="body_loop3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13_lbl" connectable="0" parent="e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Тіло циклу" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="body_loop3" style="rounded=0;curved=0;" target="hex_loop3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="710" />
+              <mxPoint x="400" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="hex_loop3" target="init_search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15_lbl" connectable="0" parent="e15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Вихід" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="init_search" target="hex_loop4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="hex_loop4" target="cond_search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17_lbl" connectable="0" parent="e17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Тіло циклу" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="cond_search" target="action_search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18_lbl" connectable="0" parent="e18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Так" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="action_search" style="rounded=0;curved=0;" target="hex_loop4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="890" />
+              <mxPoint x="400" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="cond_search" style="rounded=0;curved=0;" target="hex_loop4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="890" />
+              <mxPoint x="400" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20_lbl" connectable="0" parent="e20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ні" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="hex_loop4" target="check_found">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21_lbl" connectable="0" parent="e21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Вихід" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="check_found" target="msg_not_found">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22_lbl" connectable="0" parent="e22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Так" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="msg_not_found" style="rounded=0;curved=0;" target="hex_loop5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="615" y="1070" />
+              <mxPoint x="400" y="1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="check_found" target="hex_loop5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24_lbl" connectable="0" parent="e24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ні" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="hex_loop5" target="body_loop5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25_lbl" connectable="0" parent="e25" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Тіло циклу" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="body_loop5" style="rounded=0;curved=0;" target="hex_loop5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="1080" />
+              <mxPoint x="400" y="1080" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="hex_loop5" target="final_block">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e27_lbl" connectable="0" parent="e27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Вихід" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="final_block" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,213 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.7">
+  <diagram id="TranslatorFlow" name="Page-1">
+    <mxGraphModel dx="1418" dy="-33" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Початок main" vertex="1">
+          <mxGeometry height="50" width="120" x="170" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Налаштування консолі:&#xa;SetConsoleCP(1251)" vertex="1">
+          <mxGeometry height="50" width="160" x="150" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-4" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="printDictionary()" vertex="1">
+          <mxGeometry height="50" width="140" x="160" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-5" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="while (true)" vertex="1">
+          <mxGeometry height="40" width="160" x="150" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-6" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Ввід слова:&#xa;cin.getline(inputWord)" vertex="1">
+          <mxGeometry height="50" width="200" x="130" y="1320" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-7" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="if (inputWord == &quot;exit&quot;)" vertex="1">
+          <mxGeometry height="60" width="160" x="150" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-59" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="VW3qd_Rm3V_3ZbpSqdVI-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="break" vertex="1">
+          <mxGeometry height="50" width="80" x="350" y="1405" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-9" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="if (пусте слово)" vertex="1">
+          <mxGeometry height="60" width="140" x="160" y="1500" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-10" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontStyle=1" value="translateWord(inputWord, ...)" vertex="1">
+          <mxGeometry height="50" width="200" x="130" y="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-11" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: translation" vertex="1">
+          <mxGeometry height="50" width="180" x="140" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Кінець" vertex="1">
+          <mxGeometry height="50" width="120" x="170" y="1780" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-13" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-2" target="VW3qd_Rm3V_3ZbpSqdVI-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-14" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-3" target="VW3qd_Rm3V_3ZbpSqdVI-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-15" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-4" target="VW3qd_Rm3V_3ZbpSqdVI-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-16" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-5" target="VW3qd_Rm3V_3ZbpSqdVI-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-17" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-6" target="VW3qd_Rm3V_3ZbpSqdVI-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-18" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="VW3qd_Rm3V_3ZbpSqdVI-8" value="Так">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-19" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="VW3qd_Rm3V_3ZbpSqdVI-9" value="Ні">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-20" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;" target="VW3qd_Rm3V_3ZbpSqdVI-5" value="Так">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="1530" />
+              <mxPoint x="90" y="1260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-21" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="VW3qd_Rm3V_3ZbpSqdVI-10" value="Ні">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-22" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-10" target="VW3qd_Rm3V_3ZbpSqdVI-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-23" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="VW3qd_Rm3V_3ZbpSqdVI-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="1705" />
+              <mxPoint x="70" y="1260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-26" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Початок translateWord" vertex="1">
+          <mxGeometry height="50" width="160" x="540" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-27" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="toLowerCase(input, lowerWord)" vertex="1">
+          <mxGeometry height="50" width="200" x="520" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-28" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (i = 0; i &lt; Size; ++i)" vertex="1">
+          <mxGeometry height="50" width="180" x="530" y="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-29" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="toLowerCase(dict[i][0], dictLower)" vertex="1">
+          <mxGeometry height="50" width="220" x="510" y="1270" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-30" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="if (dictLower == lowerWord)" vertex="1">
+          <mxGeometry height="70" width="200" x="520" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Копіювання перекладу:&#xa;strcpy(buffer, dict[i][1])" vertex="1">
+          <mxGeometry height="50" width="200" x="520" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-32" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="return" vertex="1">
+          <mxGeometry height="40" width="100" x="570" y="1570" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Форматування:&#xa;buffer = &quot;[&quot; + word + &quot;]&quot;" vertex="1">
+          <mxGeometry height="60" width="180" x="530" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-34" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="return" vertex="1">
+          <mxGeometry height="40" width="100" x="570" y="1780" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-35" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-26" target="VW3qd_Rm3V_3ZbpSqdVI-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-36" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-27" target="VW3qd_Rm3V_3ZbpSqdVI-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-37" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="VW3qd_Rm3V_3ZbpSqdVI-29" value="Так">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-38" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-29" target="VW3qd_Rm3V_3ZbpSqdVI-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-39" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="VW3qd_Rm3V_3ZbpSqdVI-31" value="Так">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-40" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;" target="VW3qd_Rm3V_3ZbpSqdVI-28" value="Ні">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="1395" />
+              <mxPoint x="490" y="1195" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-41" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-31" target="VW3qd_Rm3V_3ZbpSqdVI-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-42" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;" target="VW3qd_Rm3V_3ZbpSqdVI-33" value="Ні (Вихід)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="1195" />
+              <mxPoint x="770" y="1710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-43" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-33" target="VW3qd_Rm3V_3ZbpSqdVI-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-45" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="printDictionary" vertex="1">
+          <mxGeometry height="40" width="120" x="870" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-46" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (i = 0; i &lt; Size; ++i)" vertex="1">
+          <mxGeometry height="40" width="160" x="850" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-47" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід пари слів" vertex="1">
+          <mxGeometry height="40" width="140" x="860" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-48" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="return" vertex="1">
+          <mxGeometry height="40" width="100" x="880" y="1220" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-49" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-45" target="VW3qd_Rm3V_3ZbpSqdVI-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-50" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-46" target="VW3qd_Rm3V_3ZbpSqdVI-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-51" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;" target="VW3qd_Rm3V_3ZbpSqdVI-46">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="1170" />
+              <mxPoint x="830" y="1100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-52" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="VW3qd_Rm3V_3ZbpSqdVI-48">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="1100" />
+              <mxPoint x="1030" y="1240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-53" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="toLowerCase" vertex="1">
+          <mxGeometry height="40" width="120" x="870" y="1290" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-54" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (i = 0; i &lt; len; ++i)" vertex="1">
+          <mxGeometry height="40" width="160" x="850" y="1350" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="dst[i] = tolower(src[i])" vertex="1">
+          <mxGeometry height="30" width="140" x="860" y="1410" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-56" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-53" target="VW3qd_Rm3V_3ZbpSqdVI-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-57" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-54" target="VW3qd_Rm3V_3ZbpSqdVI-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-58" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;" target="VW3qd_Rm3V_3ZbpSqdVI-54">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="1425" />
+              <mxPoint x="830" y="1370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VW3qd_Rm3V_3ZbpSqdVI-60" edge="1" parent="1" source="VW3qd_Rm3V_3ZbpSqdVI-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="VW3qd_Rm3V_3ZbpSqdVI-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
