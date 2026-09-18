@@ -106,42 +106,22 @@ namespace Lab1
                 return;
             }
 
-            var UnorderedItems = printQueue.UnorderedItems;
-            List<PrintRequest> tempArray = new List<PrintRequest>();
+            var unorderedItems = printQueue.UnorderedItems;
+            List<PrintRequest> tempQueue = new List<PrintRequest>();
 
-            foreach (var item in UnorderedItems)
+            foreach (var item in unorderedItems)
             {
-                tempArray.Add(item.Element);
+                tempQueue.Add(item.Element);
             }
 
-            for (int i = 0; i < tempArray.Count - 1; i++)
-            {
-                for (int j = 0; j < tempArray.Count - i - 1; j++)
-                {
-                    bool shouldSwap = false;
+            PriorityComparer comparer = new PriorityComparer();
 
-                    if (tempArray[j].UserPriority < tempArray[j + 1].UserPriority)
-                    {
-                        shouldSwap = true;
-                    }
-                    else if (tempArray[j].UserPriority == tempArray[j + 1].UserPriority)
-                    {
-                        if (tempArray[j].CreatedAt > tempArray[j + 1].CreatedAt)
-                        {
-                            shouldSwap = true;
-                        }
-                    }
+            tempQueue.Sort((x, y) => comparer.Compare(
+                (x.UserPriority, x.CreatedAt),
+                (y.UserPriority, y.CreatedAt)
+            ));
 
-                    if (shouldSwap)
-                    {
-                        PrintRequest temp = tempArray[j];
-                        tempArray[j] = tempArray[j + 1];
-                        tempArray[j + 1] = temp;
-                    }
-                }
-            }
-
-            foreach (PrintRequest req in tempArray)
+            foreach (PrintRequest req in tempQueue)
             {
                 Console.WriteLine($"[{req.UserPriority}] {req.UserName} - {req.DocumentName} ({req.CreatedAt:HH:mm:ss})");
             }

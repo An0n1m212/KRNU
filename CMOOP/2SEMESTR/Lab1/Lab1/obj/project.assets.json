@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\KRNU\\CMOOP\\2 SEMESTR\\Lab1\\Lab1\\Lab1.csproj",
+      "projectUniqueName": "D:\\KRNU\\CMOOP\\2SEMESTR\\Lab1\\Lab1\\Lab1.csproj",
       "projectName": "Lab1",
-      "projectPath": "D:\\KRNU\\CMOOP\\2 SEMESTR\\Lab1\\Lab1\\Lab1.csproj",
+      "projectPath": "D:\\KRNU\\CMOOP\\2SEMESTR\\Lab1\\Lab1\\Lab1.csproj",
       "packagesPath": "C:\\Users\\bodar\\.nuget\\packages\\",
-      "outputPath": "D:\\KRNU\\CMOOP\\2 SEMESTR\\Lab1\\Lab1\\obj\\",
+      "outputPath": "D:\\KRNU\\CMOOP\\2SEMESTR\\Lab1\\Lab1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

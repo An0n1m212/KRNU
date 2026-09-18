@@ -64,16 +64,7 @@ namespace Lab1
             Console.Write("Введіть середній бал: ");
             double.TryParse(Console.ReadLine(), out double score);
 
-            int maxId = 0;
-            foreach (Student s in students)
-            {
-                if (s.Id > maxId)
-                {
-                    maxId = s.Id;
-                }
-            }
-
-            students.Add(new Student { Id = maxId + 1, Name = name, Group = group, AverageScore = score });
+            students.Add(new Student { Id = students[students.Count -1].Id + 1, Name = name, Group = group, AverageScore = score });
             Console.WriteLine("Елемент успішно додано!");
         }
 
@@ -89,7 +80,7 @@ namespace Lab1
             return null;
         }
 
-        private static void EditStudent()
+        private static void EditStudent() //Разделить логику 
         {
             Console.Write("Введіть ID для редагування: ");
             if (int.TryParse(Console.ReadLine(), out int id))
@@ -117,7 +108,7 @@ namespace Lab1
             }
         }
 
-        private static void DeleteStudent()
+        private static void DeleteStudent() // Розделить, передача (ID) для удаления
         {
             Console.Write("Введіть ID для видалення: ");
             if (int.TryParse(Console.ReadLine(), out int id))
