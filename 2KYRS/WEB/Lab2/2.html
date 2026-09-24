@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>Лабораторна робота №2 — Списки в HTML</title>
+</head>
+<body>
+
+    <header>
+        <h1>Лабораторна робота №2: Робота зі списками</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Розділ 1. Ієрархічні структури (Вкладений список з 3 рівнями)</h2>
+            <article>
+                <h3>Класифікація інформаційних систем</h3>
+                
+                <ul style="list-style-type: square;">
+                    <li>
+                        <b>Апаратне забезпечення (Hardware)</b>
+                        
+                        <ol style="list-style-type: upper-roman;">
+                            <li>
+                                Процесори
+                                <ol style="list-style-type: lower-alpha;">
+                                    <li>Intel Core i7 / i9</li>
+                                    <li>AMD Ryzen 7 / 9</li>
+                                    <li>Apple M3 / M4</li>
+                                </ol>
+                            </li>
+                            <li>
+                                Накопичувачі
+                                <ol style="list-style-type: lower-alpha;">
+                                    <li>SSD NVMe M.2</li>
+                                    <li>SATA SSD</li>
+                                    <li>HDD</li>
+                                </ol>
+                            </li>
+                            <li>Оперативна пам'ять (RAM)</li>
+                        </ol>
+                    </li>
+                    
+                    <li>
+                        <b>Програмне забезпечення (Software)</b>
+                        <ol style="list-style-type: upper-roman;">
+                            <li>Системне ПЗ</li>
+                            <li>Прикладне ПЗ</li>
+                        </ol>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Розділ 2. Однорівневі списки з різною стилізацією</h2>
+            <article>
+                <h3>Нумерований список з довільного числа (decimal)</h3>
+                <ol style="list-style-type: decimal;" start="5">
+                    <li>П'ятий етап розробки</li>
+                    <li>Шостий етап розробки</li>
+                    <li>Сьомий етап розробки</li>
+                </ol>
+
+                <h3>Маркований список (circle)</h3>
+                <ul style="list-style-type: circle;">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>2026 Лабораторна робота №2</small></p>
+    </footer>
+
+</body>
+</html>
