@@ -10,3 +10,11 @@
 *.opensdf
 *.tlog
 *.log
+
+# Временные файлы Office и Windows
+~$*
+~WRL*.tmp
+Thumbs.db
+
+# Резервные копии баз данных
+*.bak

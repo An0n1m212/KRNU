@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>Лабораторна робота №6 — Візуалізація за допомогою CSS</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <h1>Лабораторна робота №6</h1>
+        <p class="subtitle">Візуалізація WEB-сторінки за допомогою каскадних
+            таблиць стилів</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>Розділ 1. Ієрархічні структури (вкладений список з трьома
+                рівнями)</h2>
+            <article>
+                <h3>Класифікація інформаційних систем</h3>
+
+                <ul class="list-square">
+                    <li>
+                        <b>Апаратне забезпечення (Hardware)</b>
+
+                        <ol class="list-roman">
+                            <li>
+                                Процесори
+                                <ol class="list-alpha">
+                                    <li>Intel Core i7 / i9</li>
+                                    <li>AMD Ryzen 7 / 9</li>
+                                    <li>Apple M3 / M4</li>
+                                </ol>
+                            </li>
+                            <li>
+                                Накопичувачі
+                                <ol class="list-alpha">
+                                    <li>SSD NVMe M.2</li>
+                                    <li>SATA SSD</li>
+                                    <li>HDD</li>
+                                </ol>
+                            </li>
+                            <li>Оперативна пам'ять (RAM)</li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        <b>Програмне забезпечення (Software)</b>
+                        <ol class="list-roman">
+                            <li>Системне ПЗ</li>
+                            <li>Прикладне ПЗ</li>
+                        </ol>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="card">
+            <h2>Розділ 2. Однорівневі списки з різною стилізацією</h2>
+            <article>
+                <h3>Нумерований список з довільного числа (decimal)</h3>
+                <ol class="list-decimal start-five">
+                    <li>П'ятий етап розробки</li>
+                    <li>Шостий етап розробки</li>
+                    <li>Сьомий етап розробки</li>
+                </ol>
+
+                <h3>Маркований список (circle)</h3>
+                <ul class="list-circle">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                </ul>
+
+                <h3>Горизонтальний список технологій</h3>
+                <ul class="tags">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Node.js</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="card note">
+            <h2>Що саме змінено на сторінці</h2>
+            <p>Усі стилі винесені у зовнішній файл <code>styles.css</code>,
+                тому розмітка сторінки більше не містить атрибута
+                <code>style</code>.</p>
+            <p>Атрибути списків <code>list-style-type</code> та
+                <code>start="5"</code> замінені на відповідні
+                CSS-властивості та класи.</p>
+        </section>
+
+    </main>
+
+    <footer class="page-footer">
+        <p>2026 · Лабораторна робота №6 · Рафієв Б. С., група КН-25-1</p>
+    </footer>
+
+</body>
+</html>
