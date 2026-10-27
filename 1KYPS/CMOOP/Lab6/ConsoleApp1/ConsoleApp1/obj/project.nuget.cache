@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uwBSLKd7lD4=",
+  "success": true,
+  "projectFilePath": "E:\\KRNU\\CMOOP\\Lab6\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Anonim\\.nuget\\packages\\spectre.console\\0.54.0\\spectre.console.0.54.0.nupkg.sha512"
+  ],
+  "logs": []
+}
