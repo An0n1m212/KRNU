@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Заявка на технічне обслуговування</title>
+</head>
+<body>
+
+    <h1>Форма оформлення заявки на ремонт та обслуговування</h1>
+
+    <form action="/submit_order" method="post">
+
+        <!-- Група 1: Контактні дані -->
+        <fieldset>
+            <legend>Контактна інформація замовника</legend>
+            <p>
+                <label for="username">ПІБ клієнта:</label><br>
+                <input type="text" id="username" name="username" placeholder="Іванов Іван Іванович" required>
+            </p>
+            <p>
+                <label for="useremail">Електронна пошта:</label><br>
+                <input type="email" id="useremail" name="useremail" placeholder="example@mail.com" required>
+            </p>
+            <p>
+                <label for="userphone">Номер телефону:</label><br>
+                <input type="tel" id="userphone" name="userphone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="099-123-4567">
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Група 2: Деталі замовлення -->
+        <fieldset>
+            <legend>Інформація про замовлення</legend>
+            
+            <p>
+                <label for="devicetype">Тип пристрою:</label><br>
+                <select id="devicetype" name="devicetype">
+                    <option value="laptop">Ноутбук</option>
+                    <option value="pc">Персональний комп'ютер</option>
+                    <option value="smartphone">Смартфон</option>
+                    <option value="tablet">Планшет</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="quantity">Кількість пристроїв:</label><br>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+            </p>
+
+            <p>Терміновість виконання:</p>
+            <input type="radio" id="urgency_low" name="urgency" value="low">
+            <label for="urgency_low">Звичайне (3-5 днів)</label><br>
+            <input type="radio" id="urgency_med" name="urgency" value="medium" checked>
+            <label for="urgency_med">Прискорене (1-2 дні)</label><br>
+            <input type="radio" id="urgency_high" name="urgency" value="high">
+            <label for="urgency_high">Термінове (в день звернення)</label><br>
+
+            <p>Додаткові послуги:</p>
+            <input type="checkbox" id="service1" name="services" value="diagnostics">
+            <label for="service1">Повна діагностика</label><br>
+            <input type="checkbox" id="service2" name="services" value="cleaning">
+            <label for="service2">Чистка від пилу та заміна термопасти</label><br>
+            <input type="checkbox" id="service3" name="services" value="os_install">
+            <label for="service3">Встановлення операційної системи</label><br>
+
+            <p>
+                <label for="servicedate">Бажана дата візиту майстра:</label><br>
+                <input type="date" id="servicedate" name="servicedate">
+            </p>
+
+            <p>
+                <label for="description">Опис проблеми:</label><br>
+                <textarea id="description" name="description" rows="4" cols="40" placeholder="Опишіть несправність..."></textarea>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Кнопки управління -->
+        <input type="submit" value="Надіслати заявку">
+        <input type="reset" value="Скинути форму">
+
+    </form>
+
+</body>
+</html>

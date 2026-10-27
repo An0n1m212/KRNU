@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>TechMaster — блокове верстання сайту</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <!-- Шапка сайту -->
+    <header id="header">
+        <div class="logo">
+            <span class="logo-mark">TM</span>
+            <span class="logo-text">TechMaster</span>
+        </div>
+        <p class="slogan">Комп'ютерна техніка для дому та бізнесу</p>
+    </header>
+
+    <!-- Центральна частина: два сайдбари та основний вміст -->
+    <div id="wrapper">
+
+        <!-- Лівий сайдбар -->
+        <aside id="sidebar-left">
+            <h2>Каталог</h2>
+            <ul class="side-menu">
+                <li><a href="#new">Новинки</a></li>
+                <li><a href="#products">Комп'ютери</a></li>
+                <li><a href="#products">Ноутбуки</a></li>
+                <li><a href="#products">Монітори</a></li>
+                <li><a href="#products">Периферія</a></li>
+                <li><a href="#delivery">Доставка й оплата</a></li>
+            </ul>
+
+            <h2>Графік роботи</h2>
+            <ul class="schedule">
+                <li>Пн – Пт: 09:00 – 19:00</li>
+                <li>Сб: 10:00 – 16:00</li>
+                <li>Нд: вихідний</li>
+            </ul>
+        </aside>
+
+        <!-- Правий сайдбар -->
+        <aside id="sidebar-right">
+            <h2>Новини</h2>
+            <div class="news">
+                <p class="news-item">
+                    <b>Нове надходження</b><br>
+                    Ігрові відеокарти RTX 4060 уже в наявності.
+                </p>
+                <p class="news-item">
+                    <b>Акція</b><br>
+                    Безкоштовне збирання ПК при замовленні комплектуючих.
+                </p>
+                <p class="news-item">
+                    <b>Гарантія</b><br>
+                    Розширена гарантія до 36 місяців.
+                </p>
+            </div>
+
+            <h2>Контакти</h2>
+            <p class="contacts">
+                м. Київ,<br>
+                вул. Хрещатик, 15<br>
+                +38 (044) 123-45-67<br>
+                info@techmaster.ua
+            </p>
+        </aside>
+
+        <!-- Основний вміст -->
+        <main id="main">
+            <h1 id="new">Магазин комп'ютерної техніки «TechMaster»</h1>
+            <p>
+                Ми пропонуємо комп'ютери, ноутбуки, монітори та
+                комплектуючі від провідних виробників. Усі товари мають
+                офіційну гарантію, а наші фахівці допоможуть підібрати
+                техніку під ваші задачі та бюджет.
+            </p>
+
+            <h2 id="products">Популярні товари</h2>
+
+            <div class="products">
+
+                <div class="product-card">
+                    <div class="product-image">ПК</div>
+                    <h3>Office Pro i3</h3>
+                    <p class="specs">Intel Core i3 · 8 GB · SSD 256 GB</p>
+                    <p class="price">12 500 грн</p>
+                    <a href="#order" class="button">Замовити</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">ПК</div>
+                    <h3>Gaming Ultra R5</h3>
+                    <p class="specs">Ryzen 5 · 16 GB · RTX 4060 · SSD 1 TB</p>
+                    <p class="price">38 000 грн</p>
+                    <a href="#order" class="button">Замовити</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">NB</div>
+                    <h3>Slim 14</h3>
+                    <p class="specs">Ryzen 5 · 16 GB · SSD 512 GB</p>
+                    <p class="price">24 900 грн</p>
+                    <a href="#order" class="button">Замовити</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">MN</div>
+                    <h3>Монітор 24" IPS</h3>
+                    <p class="specs">Full HD · 144 Гц · HDMI / DP</p>
+                    <p class="price">6 200 грн</p>
+                    <a href="#order" class="button">Замовити</a>
+                </div>
+
+            </div>
+
+            <h2 id="delivery">Доставка й оплата</h2>
+
+            <ul class="delivery-list">
+                <li>Самовивіз з магазину — безкоштовно.</li>
+                <li>Кур'єр по місту — 100 грн, безкоштовно від 5 000 грн.</li>
+                <li>Нова пошта по Україні — за тарифами перевізника.</li>
+                <li>Оплата: готівкою, карткою або безготівковим
+                    розрахунком.</li>
+            </ul>
+
+            <h2 id="order">Як зробити замовлення</h2>
+
+            <ol class="steps">
+                <li>Оберіть товар у каталозі.</li>
+                <li>Зателефонуйте або напишіть нам.</li>
+                <li>Підтвердьте замовлення та спосіб оплати.</li>
+                <li>Отримайте товар у магазині або кур'єром.</li>
+            </ol>
+        </main>
+
+    </div>
+
+    <!-- Футер -->
+    <footer id="footer">
+        <p>© 2026 TechMaster — магазин комп'ютерної техніки.</p>
+        <p>Лабораторна робота №8 · блокове верстання ·
+            Рафієв Б. С., група КН-25-1</p>
+    </footer>
+
+</body>
+</html>

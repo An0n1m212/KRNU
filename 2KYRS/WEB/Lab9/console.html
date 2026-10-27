@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>Результат виконання script.js — лабораторна робота №9</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 36px 24px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #eef2f7;
+        }
+
+        .console-window {
+            max-width: 980px;
+            margin: 0 auto;
+            background-color: #1e1e1e;
+            border: 1px solid #3c3c3c;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 14px 34px rgba(16, 42, 67, 0.35);
+        }
+
+        .console-bar {
+            display: flex;
+            align-items: center;
+            padding: 10px 16px;
+            background-color: #2d2d2d;
+            border-bottom: 1px solid #3c3c3c;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+            border-radius: 50%;
+        }
+
+        .dot.red    { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green  { background-color: #27c93f; }
+
+        .console-title {
+            margin-left: 12px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 13px;
+            color: #bdbdbd;
+        }
+
+        .console-body {
+            margin: 0;
+            padding: 20px 24px 28px;
+            min-height: 190px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 16px;
+            line-height: 1.75;
+            color: #d4d4d4;
+            white-space: pre-wrap;
+        }
+
+        .prompt { color: #4ec9b0; }
+        .output { color: #e6e6e6; }
+        .hint   { color: #808080; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div class="console-window">
+        <div class="console-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="console-title">Консоль — лабораторна робота №9</span>
+        </div>
+
+        <pre class="console-body"><span class="prompt">Lab9&gt; node script.js</span>
+<span id="output" class="output"></span></pre>
+    </div>
+
+    <script>
+        // Перехоплюємо console.log, щоб показати реальний вивід скрипта
+        var lines = [];
+        var nativeLog = console.log;
+
+        console.log = function () {
+            var text = Array.prototype.slice.call(arguments).map(function (value) {
+                return typeof value === "string" ? value : String(value);
+            }).join(" ");
+            lines.push(text);
+            nativeLog.apply(console, arguments);
+        };
+    </script>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById("output").textContent = lines.join("\n");
+    </script>
+
+</body>
+</html>

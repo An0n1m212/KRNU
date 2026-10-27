@@ -1,0 +1,174 @@
+/* ============================================================
+   Лабораторна робота №6. Зовнішня таблиця стилів
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0 0 40px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #222222;
+    background-color: #eef2f7;
+}
+
+/* ---------- Шапка сторінки ---------- */
+
+.page-header {
+    padding: 28px 40px;
+    color: #ffffff;
+    background-color: #1f3a5f;
+    background-image: linear-gradient(135deg, #1f3a5f 0%, #2e6da4 100%);
+    border-bottom: 5px solid #f0a500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    margin: 0;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* ---------- Основний вміст ---------- */
+
+main {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.card {
+    margin-bottom: 24px;
+    padding: 20px 26px 26px;
+    background-color: #ffffff;
+    border: 1px solid #d5dde5;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+    padding-left: 12px;
+    color: #1f3a5f;
+    font-size: 22px;
+    border-left: 6px solid #f0a500;
+}
+
+.card h3 {
+    color: #2e6da4;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 10px 0;
+    text-align: justify;
+}
+
+/* Псевдоелемент ::before — маркер перед заголовком картки */
+
+.card h2::before {
+    content: "■";
+    margin-right: 10px;
+    font-size: 16px;
+    color: #f0a500;
+    vertical-align: 2px;
+}
+
+/* Псевдоелемент ::after — позначка в кінці тексту примітки */
+
+.note p::after {
+    content: " ✔";
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+code {
+    padding: 2px 5px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    color: #8b1a1a;
+    background-color: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+}
+
+/* ---------- Списки ---------- */
+
+.list-square  { list-style-type: square; }
+.list-roman   { list-style-type: upper-roman; }
+.list-alpha   { list-style-type: lower-alpha; }
+.list-circle  { list-style-type: circle; }
+.list-decimal { list-style-type: decimal; }
+
+/* Заміна атрибута start="5" на CSS-властивість */
+
+.start-five {
+    counter-reset: list-item 4;
+}
+
+.list-square > li {
+    margin-bottom: 12px;
+}
+
+.list-square li,
+.list-roman li,
+.list-alpha li {
+    padding: 2px 0;
+}
+
+li::marker {
+    color: #d35400;
+    font-weight: bold;
+}
+
+/* Горизонтальний список */
+
+.tags {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.tags li {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 5px 14px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #2e6da4;
+    border-radius: 14px;
+}
+
+.tags li:hover {
+    background-color: #f0a500;
+}
+
+/* ---------- Додаткова картка ---------- */
+
+.note {
+    background-color: #fffaf0;
+    border-color: #f0c36d;
+}
+
+/* ---------- Футер ---------- */
+
+.page-footer {
+    margin-top: 30px;
+    padding: 16px;
+    font-size: 14px;
+    color: #f0f0f0;
+    text-align: center;
+    background-color: #1f3a5f;
+}
