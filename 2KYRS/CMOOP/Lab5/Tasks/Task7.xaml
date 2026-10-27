@@ -1,0 +1,34 @@
+﻿<Window x:Class="Lab5.Tasks.Task7"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5.Tasks"
+        mc:Ignorable="d"
+        Title="Task7" Height="auto" Width="auto">
+    <Grid>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Введіть 4-значний код: " VerticalAlignment="Center"/>
+                <TextBox x:Name="CodeInput" Width="80" Height="25" MaxLength="4" Margin="5,0"/>
+                <Button Content="Перевірити" Width="90" Height="25" Click="CheckCode_Click"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+                <CheckBox x:Name="XRayCheckBox" Content="Увімкнути рентген" VerticalAlignment="Center" Checked="XRay_Changed" Unchecked="XRay_Changed"/>
+                <TextBlock x:Name="XRayHint" Margin="15,0,0,0" Foreground="DarkBlue" FontWeight="Bold" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <TextBlock x:Name="AttemptsText" Grid.Row="2" Text="Залишилось спроб: 5" Margin="0,0,0,10" FontWeight="Bold"/>
+
+            <TextBox x:Name="HistoryBox" Grid.Row="3" IsReadOnly="True" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MinHeight="120"/>
+        </Grid>
+    </Grid>
+</Window>

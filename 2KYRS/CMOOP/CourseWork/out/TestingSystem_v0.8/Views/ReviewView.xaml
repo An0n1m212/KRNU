@@ -1,0 +1,71 @@
+<UserControl x:Class="TestingSystem.Views.ReviewView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:TestingSystem.Infrastructure">
+    <Grid Margin="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="16" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="0">
+            <TextBlock DockPanel.Dock="Top" Text="{loc:T Tab_Review}" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
+            <TextBlock x:Name="EmptyText" DockPanel.Dock="Top" Text="{loc:T Msg_NothingToReview}" Visibility="Collapsed"
+                       Foreground="{DynamicResource SecondaryTextBrush}" Margin="0,0,0,8" />
+            <DataGrid x:Name="PendingGrid" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="Column"
+                      SelectionMode="Single" CanUserAddRows="False" SelectionChanged="PendingGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{loc:T Col_Student}" Binding="{Binding Student}" Width="*" />
+                    <DataGridTextColumn Header="{loc:T Col_Test}" Binding="{Binding Test}" Width="*" />
+                    <DataGridTextColumn Header="{loc:T Col_Date}" Binding="{Binding Date, StringFormat=dd.MM HH:mm}" Width="90" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+
+        <DockPanel Grid.Column="2">
+            <StackPanel DockPanel.Dock="Bottom" x:Name="SavePanel" Visibility="Collapsed" Margin="0,10,0,0">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <Button x:Name="AiButton" Content="{loc:T Ai_SuggestGrades}" Padding="12,5" Click="AiSuggest_Click" />
+                    <TextBlock x:Name="AiStatus" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap" MaxWidth="420"
+                               Foreground="{DynamicResource SecondaryTextBrush}" />
+                </StackPanel>
+                <TextBlock Text="{loc:T Lbl_TeacherComment}" />
+                <TextBox x:Name="CommentBox" Padding="4" Margin="0,2,0,8" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="44" />
+                <Button Content="{loc:T Btn_CompleteReview}" Padding="16,7" FontWeight="Bold" HorizontalAlignment="Left" Click="Save_Click" />
+            </StackPanel>
+
+            <TextBlock x:Name="HeaderText" DockPanel.Dock="Top" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,0,0,10" />
+            <TextBlock x:Name="HintText" DockPanel.Dock="Top" Text="{loc:T Hint_SelectWork}" Foreground="{DynamicResource SecondaryTextBrush}" />
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="ReviewList">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource CardStyle}" Padding="12" Margin="0,0,0,10">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding QuestionText}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                                    <TextBlock Text="{loc:T Lbl_StudentAnswer}" Foreground="{DynamicResource SecondaryTextBrush}" Margin="0,8,0,2" />
+                                    <TextBlock Text="{Binding AnswerText}" TextWrapping="Wrap" Visibility="{Binding TextVis}" />
+                                    <Button Content="{Binding FileLabel}" Visibility="{Binding FileVis}" HorizontalAlignment="Left"
+                                            Padding="10,4" Click="OpenFile_Click" />
+                                    <TextBlock Text="{Binding Reference}" FontStyle="Italic" TextWrapping="Wrap" Margin="0,6,0,0"
+                                               Foreground="{DynamicResource SecondaryTextBrush}" Visibility="{Binding ReferenceVis}" />
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <TextBlock Text="{loc:T Lbl_Score}" VerticalAlignment="Center" Margin="0,0,8,0" />
+                                        <TextBox Text="{Binding ScoreText, UpdateSourceTrigger=PropertyChanged}" Width="70" Padding="4" />
+                                        <TextBlock Text="{Binding MaxText}" VerticalAlignment="Center" Margin="8,0,0,0"
+                                                   Foreground="{DynamicResource SecondaryTextBrush}" />
+                                    </StackPanel>
+                                    <TextBlock Text="{loc:T Lbl_TeacherNote}" Margin="0,8,0,2" />
+                                    <TextBox Text="{Binding Note, UpdateSourceTrigger=PropertyChanged}" Padding="4" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>

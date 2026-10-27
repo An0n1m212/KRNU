@@ -1,0 +1,36 @@
+<UserControl x:Class="TestingSystem.Views.GroupsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:TestingSystem.Infrastructure">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource CardStyle}">
+            <StackPanel>
+                <TextBlock Text="{loc:T Grp_Title}" FontSize="17" FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="{loc:T Grp_NameLabel}" VerticalAlignment="Center" Margin="0,0,8,0" />
+                    <TextBox x:Name="NameBox" Width="260" Padding="4" Margin="0,0,8,0" />
+                    <Button Content="{loc:T Btn_AddGroup}" Padding="12,5" Click="Add_Click" />
+                </StackPanel>
+                <TextBlock x:Name="ErrorText" TextWrapping="Wrap" Margin="0,8,0,0"
+                           Foreground="{DynamicResource ErrorBrush}" Visibility="Collapsed" />
+            </StackPanel>
+        </Border>
+
+        <DockPanel Grid.Row="1" Margin="0,12,0,0">
+            <Button DockPanel.Dock="Bottom" Content="{loc:T Btn_Delete}" Click="Delete_Click"
+                    Padding="12,5" HorizontalAlignment="Left" Margin="0,10,0,0" />
+            <DataGrid x:Name="GroupsGrid" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="Column"
+                      CanUserAddRows="False" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{loc:T Col_Group}" Binding="{Binding Name}" Width="*" />
+                    <DataGridTextColumn Header="{loc:T Col_Students}" Binding="{Binding Students}" Width="120" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</UserControl>

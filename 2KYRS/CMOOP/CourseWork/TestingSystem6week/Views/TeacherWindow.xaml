@@ -1,0 +1,17 @@
+<Window x:Class="TestingSystem.Views.TeacherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Місце викладача — тиждень 6 (перевірка, журнал, аналітика)" Height="480" Width="760">
+    <DockPanel Margin="16">
+        <WrapPanel DockPanel.Dock="Top" Margin="0,0,0,10">
+            <Button Content="Новий тест" Width="110" Click="OnNew"/>
+            <Button Content="Редагувати" Width="110" Margin="8,0,0,0" Click="OnEdit"/>
+            <Button Content="Видалити" Width="100" Margin="8,0,0,0" Click="OnDelete"/>
+            <Button Content="На перевірці" Width="110" Margin="16,0,0,0" Click="OnReview"/>
+            <Button Content="Журнал" Width="90" Margin="8,0,0,0" Click="OnJournal"/>
+            <Button Content="Аналітика" Width="90" Margin="8,0,0,0" Click="OnAnalytics"/>
+            <Button Content="Вийти" Width="80" Margin="8,0,0,0" Click="OnLogout"/>
+        </WrapPanel>
+        <ListBox x:Name="TestsList" DisplayMemberPath="Title"/>
+    </DockPanel>
+</Window>

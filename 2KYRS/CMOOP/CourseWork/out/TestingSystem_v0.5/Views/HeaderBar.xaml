@@ -1,0 +1,33 @@
+<UserControl x:Class="TestingSystem.Views.HeaderBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:v="clr-namespace:TestingSystem.Views"
+             xmlns:loc="clr-namespace:TestingSystem.Infrastructure">
+    <Border Background="{DynamicResource HeaderBackgroundBrush}"
+            BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="0,0,0,1" Padding="12,8">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                <!-- Индикатор подключения к хранилищу данных -->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,16,0">
+                    <Ellipse Width="10" Height="10" Fill="{DynamicResource SuccessBrush}" VerticalAlignment="Center" />
+                    <TextBlock x:Name="ConnectionText" Margin="6,0,0,0" FontSize="12"
+                               Foreground="{DynamicResource SecondaryTextBrush}" VerticalAlignment="Center" />
+                </StackPanel>
+                <v:SettingsPanel x:Name="Settings" />
+                <Button Content="{loc:T Btn_Logout}" Margin="12,0,0,0" Padding="12,5" Click="Logout_Click" />
+            </StackPanel>
+
+            <!-- Клик по имени/аватару открывает «Личный кабинет» -->
+            <Button HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Padding="4"
+                    Cursor="Hand" ToolTip="{loc:T Hdr_OpenProfile}" Click="Profile_Click">
+                <StackPanel Orientation="Horizontal">
+                    <v:AvatarView x:Name="Avatar" Width="40" Height="40" />
+                    <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                        <TextBlock x:Name="NameText" FontSize="15" FontWeight="SemiBold" />
+                        <TextBlock x:Name="RoleText" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+    </Border>
+</UserControl>

@@ -1,0 +1,16 @@
+<Window x:Class="TestingSystem.Views.ReviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Перевірка роботи — тиждень 6" Height="520" Width="700">
+    <DockPanel Margin="16">
+        <TextBlock x:Name="HeadText" DockPanel.Dock="Top" TextWrapping="Wrap" Margin="0,0,0,8"/>
+        <StackPanel DockPanel.Dock="Bottom" Margin="0,8,0,0">
+            <TextBlock Text="Коментар викладача"/>
+            <TextBox x:Name="CommentBox" Margin="0,0,0,6"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Завершити перевірку" Width="170" Click="OnFinish"/>
+            </StackPanel>
+        </StackPanel>
+        <ListBox x:Name="DetailsList" SelectionChanged="OnSelect"/>
+    </DockPanel>
+</Window>

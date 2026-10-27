@@ -1,0 +1,108 @@
+﻿<Window x:Class="Lab6.BestOil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Автозаправка BestOil" Height="480" Width="550" Background="#FFF5E9"
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="130"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Блок Автозаправка -->
+        <GroupBox Header="Автозаправка" Grid.Column="0" Margin="5" Padding="5">
+            <StackPanel>
+                <Grid Margin="0,5">
+                    <TextBlock Text="Бензин:" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="FuelComboBox" Width="120" HorizontalAlignment="Right" SelectionChanged="FuelComboBox_SelectionChanged"/>
+                </Grid>
+
+                <Grid Margin="0,5">
+                    <TextBlock Text="Ціна:" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBox x:Name="FuelPriceTextBox" Width="90" IsReadOnly="True" Background="#EEE"/>
+                        <TextBlock Text=" грн." VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <GroupBox Header="Вибір" Margin="0,5">
+                    <StackPanel>
+                        <RadioButton x:Name="LitersRadioButton" Content="Кількість" IsChecked="True" Checked="Mode_Checked"/>
+                        <RadioButton x:Name="SumRadioButton" Content="Сума" Margin="0,5,0,0" Checked="Mode_Checked"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <Grid Margin="0,5">
+                    <TextBox x:Name="FuelQuantityTextBox" Width="90" HorizontalAlignment="Right" Text="10,00" TextChanged="FuelInput_TextChanged"/>
+                </Grid>
+
+                <GroupBox x:Name="FuelResultGroupBox" Header="До оплати:" Margin="0,5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock x:Name="FuelResultTextBlock" Text="0,00" FontSize="22" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="FuelUnitTextBlock" Text=" грн." FontSize="14" VerticalAlignment="Bottom" Margin="5,0,0,2"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Блок Міні-Кафе -->
+        <GroupBox Header="Міні-Кафе" Grid.Column="1" Margin="5" Padding="5">
+            <StackPanel>
+                <Grid Margin="0,2">
+                    <TextBlock Text="Ціна" HorizontalAlignment="Right" Margin="0,0,65,0"/>
+                    <TextBlock Text="Кількість" HorizontalAlignment="Right"/>
+                </Grid>
+
+                <!-- Хот-дог -->
+                <Grid Margin="0,3">
+                    <CheckBox x:Name="HotDogCheckBox" Content="Хот-дог" VerticalAlignment="Center" Checked="CafeCheckBox_Changed" Unchecked="CafeCheckBox_Changed"/>
+                    <TextBox x:Name="HotDogPrice" Text="40,00" Width="45" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,0,55,0" TextChanged="HotDogPrice_TextChanged"/>
+                    <TextBox x:Name="HotDogCount" Text="0" Width="45" IsEnabled="False" HorizontalAlignment="Right" TextChanged="CafeCount_TextChanged"/>
+                </Grid>
+
+                <!-- Гамбургер -->
+                <Grid Margin="0,3">
+                    <CheckBox x:Name="BurgerCheckBox" Content="Гамбургер" VerticalAlignment="Center" Checked="CafeCheckBox_Changed" Unchecked="CafeCheckBox_Changed"/>
+                    <TextBox x:Name="BurgerPrice" Text="54,40" Width="45" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,0,55,0"/>
+                    <TextBox x:Name="BurgerCount" Text="0" Width="45" IsEnabled="False" HorizontalAlignment="Right" TextChanged="CafeCount_TextChanged"/>
+                </Grid>
+
+                <!-- Картопля-фрі -->
+                <Grid Margin="0,3">
+                    <CheckBox x:Name="FriesCheckBox" Content="Картопля-фрі" VerticalAlignment="Center" Checked="CafeCheckBox_Changed" Unchecked="CafeCheckBox_Changed"/>
+                    <TextBox x:Name="FriesPrice" Text="75,20" Width="45" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,0,55,0"/>
+                    <TextBox x:Name="FriesCount" Text="0" Width="45" IsEnabled="False" HorizontalAlignment="Right" TextChanged="CafeCount_TextChanged"/>
+                </Grid>
+
+                <!-- Кока-кола -->
+                <Grid Margin="0,3">
+                    <CheckBox x:Name="ColaCheckBox" Content="Кока-кола" VerticalAlignment="Center" Checked="CafeCheckBox_Changed" Unchecked="CafeCheckBox_Changed"/>
+                    <TextBox x:Name="ColaPrice" Text="44,40" Width="45" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,0,55,0"/>
+                    <TextBox x:Name="ColaCount" Text="0" Width="45" IsEnabled="False" HorizontalAlignment="Right" TextChanged="CafeCount_TextChanged"/>
+                </Grid>
+
+                <GroupBox Header="До оплати:" Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock x:Name="CafeResultTextBlock" Text="0,00" FontSize="22" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock Text=" грн." FontSize="14" VerticalAlignment="Bottom" Margin="5,0,0,2"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Підсумковий блок -->
+        <GroupBox Header="ВСЬОГО до сплати" Grid.Row="1" Grid.ColumnSpan="2" Margin="5">
+            <Grid>
+                <Button Content="Прорахувати" Width="120" Height="40" HorizontalAlignment="Left" Margin="20,0,0,0" Click="Calculate_Click"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0" VerticalAlignment="Center">
+                    <TextBlock x:Name="TotalResultTextBlock" Text="0,00" FontSize="32" FontWeight="Bold"/>
+                    <TextBlock Text=" грн." FontSize="18" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

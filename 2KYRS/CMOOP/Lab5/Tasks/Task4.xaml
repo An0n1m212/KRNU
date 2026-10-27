@@ -1,0 +1,18 @@
+﻿<Window x:Class="Lab5.Tasks.Task4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5.Tasks"
+        mc:Ignorable="d"
+        Title="Task4" Height="auto" Width="auto">
+    <Grid>
+        <UniformGrid Columns="1" Margin="30" Width="220" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="Btn1" Content="Кнопка 1" Background="#FF8080" Margin="5" Height="35" Click="Btn1_Click"/>
+            <Button x:Name="Btn2" Content="Кнопка 2" Background="#80C0FF" Margin="5" Height="35" Click="Btn2_Click"/>
+            <Button x:Name="Btn3" Content="Кнопка 3" Background="#80FF80" Margin="5" Height="35" Click="Btn3_Click"/>
+            <Button x:Name="Btn4" Content="Кнопка 4" Background="#FFFF80" Margin="5" Height="35" Click="Btn4_Click"/>
+            <Button x:Name="Btn5" Content="Кнопка 5" Background="#E080FF" Margin="5" Height="35" Click="Btn5_Click"/>
+        </UniformGrid>
+    </Grid>
+</Window>

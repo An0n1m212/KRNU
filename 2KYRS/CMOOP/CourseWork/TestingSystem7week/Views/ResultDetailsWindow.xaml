@@ -1,0 +1,9 @@
+<Window x:Class="TestingSystem.Views.ResultDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Розбір помилок — тиждень 6" Height="480" Width="680">
+    <DockPanel Margin="16">
+        <TextBlock x:Name="HeadText" DockPanel.Dock="Top" Margin="0,0,0,8" TextWrapping="Wrap"/>
+        <ListBox x:Name="DetailsList"/>
+    </DockPanel>
+</Window>

@@ -1,0 +1,23 @@
+<Window x:Class="TestingSystem.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Головна — тиждень 2 (ролі)" Height="400" Width="600">
+    <DockPanel Margin="16">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,12">
+            <TextBlock x:Name="UserText" VerticalAlignment="Center" Margin="0,0,12,0"/>
+            <Button Content="Вийти" Width="100" Click="OnLogout"/>
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="Групи">
+                <ListBox x:Name="GroupsList" DisplayMemberPath="Name"/>
+            </GroupBox>
+            <GroupBox Header="Користувачі" Grid.Column="1" Margin="8,0,0,0">
+                <ListBox x:Name="UsersList" DisplayMemberPath="Username"/>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+</Window>

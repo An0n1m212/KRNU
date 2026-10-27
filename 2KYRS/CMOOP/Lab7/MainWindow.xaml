@@ -1,0 +1,21 @@
+﻿<Window x:Class="Lab7.MainWindow"
+    Background="{StaticResource BackgroundBrush}" 
+    Height="420" Title="Лабораторна робота №7 — Головне меню" 
+    Width="480" WindowStartupLocation="CenterScreen" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="25">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource TitleStyle}" Text="Лабораторна робота №7"/>
+            <TextBlock FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Margin="0,0,0,25" Text="Основи WPF: Ресурси та стилі"/>
+
+            <Button Click="OpenAuth_Click" Content="Авторизація та Реєстрація (Завдання 1)" Style="{StaticResource MainButtonStyle}"/>
+
+            <Button Click="Open2048_Click" Content="Гра «2048» (Завдання 2)" Style="{StaticResource MainButtonStyle}"/>
+
+            <Button Click="OpenSniper_Click" Content="Гра «Нічний Снайпер» (Завдання 3)" Style="{StaticResource MainButtonStyle}"/>
+
+            <Button Background="#b04545" Click="Exit_Click" Content="Вихід" Foreground="White" Margin="0,15,0,0" Style="{StaticResource MainButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,54 @@
+<Window x:Class="TestingSystem.Views.ResultDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:TestingSystem.Infrastructure"
+        Width="720" Height="660" WindowStartupLocation="CenterOwner">
+    <DockPanel Margin="16">
+        <Button DockPanel.Dock="Bottom" Content="{loc:T Btn_Close}" Padding="18,6" HorizontalAlignment="Right"
+                Margin="0,12,0,0" IsCancel="True" />
+        <StackPanel DockPanel.Dock="Top" Margin="0,0,0,10">
+            <TextBlock x:Name="SummaryText" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap" />
+            <TextBlock x:Name="CommentText" TextWrapping="Wrap" Margin="0,4,0,0" Foreground="{DynamicResource SecondaryTextBrush}" />
+            <TextBlock x:Name="HiddenText" TextWrapping="Wrap" Margin="0,4,0,0" Foreground="{DynamicResource WarningBrush}" />
+        </StackPanel>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="DetailsList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource CardStyle}" Padding="12" Margin="0,0,0,10">
+                            <StackPanel>
+                                <TextBlock Text="{Binding QuestionText}" FontWeight="SemiBold" TextWrapping="Wrap" />
+
+                                <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                                    <TextBlock Text="{loc:T Lbl_YourAnswer}" Foreground="{DynamicResource SecondaryTextBrush}" Margin="0,0,6,0" />
+                                    <TextBlock x:Name="GivenText" Text="{Binding GivenText}" TextWrapping="Wrap"
+                                               Foreground="{DynamicResource ErrorBrush}" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0" Visibility="{Binding CorrectVis}">
+                                    <TextBlock Text="{loc:T Lbl_CorrectAnswer}" Foreground="{DynamicResource SecondaryTextBrush}" Margin="0,0,6,0" />
+                                    <TextBlock Text="{Binding CorrectText}" TextWrapping="Wrap" Foreground="{DynamicResource SuccessBrush}" />
+                                </StackPanel>
+
+                                <TextBlock Text="{Binding ScoreText}" FontSize="12" Margin="0,6,0,0" />
+                                <TextBlock Text="{Binding Explanation}" FontStyle="Italic" TextWrapping="Wrap" Margin="0,4,0,0"
+                                           Visibility="{Binding ExplanationVis}" />
+                                <TextBlock Text="{Binding TeacherNote}" TextWrapping="Wrap" Margin="0,4,0,0"
+                                           Foreground="{DynamicResource AccentBrush}" Visibility="{Binding NoteVis}" />
+                            </StackPanel>
+                        </Border>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsCorrect}" Value="True">
+                                <Setter TargetName="GivenText" Property="Foreground" Value="{DynamicResource SuccessBrush}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsPending}" Value="True">
+                                <Setter TargetName="GivenText" Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

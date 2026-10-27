@@ -1,0 +1,26 @@
+<Window x:Class="TestingSystem.Views.StudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Кабінет студента — тиждень 6 (результати, сертифікат)" Height="560" Width="720">
+    <DockPanel Margin="16">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock x:Name="UserText" VerticalAlignment="Center" Margin="0,0,12,0"/>
+            <Button Content="Почати" Width="90" Click="OnStart"/>
+            <Button Content="Розбір" Width="90" Margin="8,0,0,0" Click="OnDetails"/>
+            <Button Content="Сертифікат PDF" Width="130" Margin="8,0,0,0" Click="OnCertificate"/>
+            <Button Content="Вийти" Width="80" Margin="8,0,0,0" Click="OnLogout"/>
+        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Доступні тести">
+                <ListBox x:Name="TestsList"/>
+            </GroupBox>
+            <GroupBox Header="Мої результати" Grid.Row="1" Margin="0,8,0,0">
+                <ListBox x:Name="ResultsList"/>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+</Window>

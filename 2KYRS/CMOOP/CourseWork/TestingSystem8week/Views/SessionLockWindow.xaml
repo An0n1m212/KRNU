@@ -1,0 +1,14 @@
+<Window x:Class="TestingSystem.Views.SessionLockWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Сеанс заблоковано" Height="240" Width="360" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="20">
+        <TextBlock Text="Бездіяльність 30 хв. Введіть пароль для розблокування." TextWrapping="Wrap"/>
+        <PasswordBox x:Name="PasswordBox" Margin="0,12,0,8"/>
+        <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap"/>
+        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+            <Button Content="Розблокувати" Width="130" Click="OnUnlock"/>
+            <Button Content="Вийти" Width="90" Margin="8,0,0,0" Click="OnLogout"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
