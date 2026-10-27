@@ -1,0 +1,217 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.7">
+  <diagram name="SubFunctions" id="SubFunc_Flowchart">
+    <mxGraphModel dx="1418" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="in_title" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" value="void inputMat" vertex="1">
+          <mxGeometry height="30" width="150" x="100" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="in_start" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Початок" vertex="1">
+          <mxGeometry height="50" width="110" x="120" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="in_msg" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: &quot;Enter matrix...&quot;" vertex="1">
+          <mxGeometry height="50" width="170" x="90" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="in_loop_i" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="i = 0; i &lt; n; i++" vertex="1">
+          <mxGeometry height="50" width="150" x="100" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="in_loop_j" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="j = 0; j &lt; n; j++" vertex="1">
+          <mxGeometry height="50" width="150" x="100" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="in_read" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Ввід: C[i][j]" vertex="1">
+          <mxGeometry height="50" width="120" x="115" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="in_end" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Кінець" vertex="1">
+          <mxGeometry height="50" width="110" x="120" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="e_in_1" edge="1" parent="1" source="in_start" target="in_msg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_in_2" edge="1" parent="1" source="in_msg" target="in_loop_i">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_in_3" edge="1" parent="1" source="in_loop_i" target="in_loop_j">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_in_4" edge="1" parent="1" source="in_loop_j" target="in_read">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_in_j_back" edge="1" parent="1" source="in_read" style="edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" target="in_loop_j">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="425" />
+              <mxPoint x="280" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_in_i_back" edge="1" parent="1" source="in_loop_j" style="edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" target="in_loop_i">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="345" />
+              <mxPoint x="300" y="265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_in_exit" edge="1" parent="1" source="in_loop_i" style="edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;" target="in_end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="60" y="265" />
+              <mxPoint x="60" y="545" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gen_title" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" value="void genMat" vertex="1">
+          <mxGeometry height="30" width="150" x="450" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_start" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Початок" vertex="1">
+          <mxGeometry height="50" width="110" x="470" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_srand" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="srand(time(NULL))" vertex="1">
+          <mxGeometry height="40" width="120" x="465" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_msg" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: &quot;Generated...&quot;" vertex="1">
+          <mxGeometry height="50" width="170" x="440" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_loop_i" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="i = 0; i &lt; n; i++" vertex="1">
+          <mxGeometry height="50" width="150" x="450" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_loop_j" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="j = 0; j &lt; n; j++" vertex="1">
+          <mxGeometry height="50" width="150" x="450" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_calc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="C[i][j] = rand() % 45 + 1" vertex="1">
+          <mxGeometry height="50" width="140" x="455" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_end" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Кінець" vertex="1">
+          <mxGeometry height="50" width="110" x="470" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gen_1" edge="1" parent="1" source="gen_start" target="gen_srand">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gen_2" edge="1" parent="1" source="gen_srand" target="gen_msg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gen_3" edge="1" parent="1" source="gen_msg" target="gen_loop_i">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gen_4" edge="1" parent="1" source="gen_loop_i" target="gen_loop_j">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gen_5" edge="1" parent="1" source="gen_loop_j" target="gen_calc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gen_j_back" edge="1" parent="1" source="gen_calc" style="edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" target="gen_loop_j">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="495" />
+              <mxPoint x="620" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_gen_i_back" edge="1" parent="1" source="gen_loop_j" style="edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" target="gen_loop_i">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="415" />
+              <mxPoint x="640" y="335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_gen_exit" edge="1" parent="1" source="gen_loop_i" style="edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;" target="gen_end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="335" />
+              <mxPoint x="420" y="615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="out_title" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" value="void outMat" vertex="1">
+          <mxGeometry height="30" width="150" x="850" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="out_start" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Початок" vertex="1">
+          <mxGeometry height="50" width="110" x="870" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="out_loop_i" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="i = 0; i &lt; n; i++" vertex="1">
+          <mxGeometry height="50" width="150" x="850" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="out_loop_j" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="j = 0; j &lt; n; j++" vertex="1">
+          <mxGeometry height="50" width="150" x="850" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="out_cond" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="C[i][j] == inf?" vertex="1">
+          <mxGeometry height="60" width="130" x="860" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="out_inf" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: &quot;inf\t&quot;" vertex="1">
+          <mxGeometry height="50" width="110" x="780" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="out_val" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: C[i][j] + &quot;\t&quot;" vertex="1">
+          <mxGeometry height="50" width="130" x="960" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="out_endl" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: endl" vertex="1">
+          <mxGeometry height="50" width="100" x="1050" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="out_end" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Кінець" vertex="1">
+          <mxGeometry height="50" width="110" x="870" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out_1" edge="1" parent="1" source="out_start" target="out_loop_i">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out_2" edge="1" parent="1" source="out_loop_i" target="out_loop_j">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out_3" edge="1" parent="1" source="out_loop_j" target="out_cond">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out_yes" edge="1" parent="1" source="out_cond" target="out_inf" value="Так">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="835" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_out_no" edge="1" parent="1" source="out_cond" target="out_val" value="Ні">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1025" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_out_back_1" edge="1" parent="1" source="out_inf" style="edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;" target="out_loop_j">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="835" y="480" />
+              <mxPoint x="750" y="480" />
+              <mxPoint x="750" y="265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_out_back_2" edge="1" parent="1" source="out_val" style="edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;" target="out_loop_j">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1025" y="480" />
+              <mxPoint x="750" y="480" />
+              <mxPoint x="750" y="265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_out_j_end" edge="1" parent="1" source="out_loop_j" target="out_endl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out_back_i" edge="1" parent="1" source="out_endl" style="edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" target="out_loop_i">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="185" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_out_exit" edge="1" parent="1" source="out_loop_i" style="edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;" target="out_end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="185" />
+              <mxPoint x="720" y="520" />
+              <mxPoint x="925" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

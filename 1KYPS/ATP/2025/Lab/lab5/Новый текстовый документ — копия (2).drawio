@@ -1,0 +1,276 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.7">
+  <diagram name="CppMatrixFlow" id="Matrix_Flow_Complex">
+    <mxGraphModel dx="2026" dy="1134" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="case_0" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="return 0" vertex="1">
+          <mxGeometry height="40" width="80" x="120" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="sw0" edge="1" parent="1" source="switch_choice" target="case_0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sw0_lbl" connectable="0" parent="sw0" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="0" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="case_1" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="mas = inpMat(n)" vertex="1">
+          <mxGeometry height="40" width="120" x="260" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="sw1" edge="1" parent="1" source="switch_choice" target="case_1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="430" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sw1_lbl" connectable="0" parent="sw1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c1" edge="1" parent="1" source="case_1" style="rounded=0;curved=0;" target="merge_cases">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="start_count" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="int countMat(mas, n)" vertex="1">
+          <mxGeometry height="50" width="140" x="470" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="init_count" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="count = 0" vertex="1">
+          <mxGeometry height="40" width="100" x="490" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="loop_count" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (int i = 1; i &lt; n; i += 2)" vertex="1">
+          <mxGeometry height="60" width="200" x="440" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_count" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="if (mas[i] &lt; 0)" vertex="1">
+          <mxGeometry height="60" width="120" x="480" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_count" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="count++" vertex="1">
+          <mxGeometry height="40" width="70" x="620" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="ret_count" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="return count" vertex="1">
+          <mxGeometry height="50" width="120" x="480" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="fc1" edge="1" parent="1" source="start_count" target="init_count">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fc2" edge="1" parent="1" source="init_count" target="loop_count">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fc3" edge="1" parent="1" source="loop_count" target="cond_count">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fc3_lbl" connectable="0" parent="fc3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Тіло циклу" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fc4" edge="1" parent="1" source="cond_count" target="inc_count">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fc4_lbl" connectable="0" parent="fc4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Так" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fc5" edge="1" parent="1" source="inc_count" style="rounded=0;curved=0;" target="loop_count">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="655" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fc6" edge="1" parent="1" source="cond_count" style="rounded=0;curved=0;" target="loop_count">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="320" />
+              <mxPoint x="430" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fc6_lbl" connectable="0" parent="fc6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ні" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fc7" edge="1" parent="1" source="loop_count" style="rounded=0;curved=0;" target="ret_count">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="220" />
+              <mxPoint x="420" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="start_main" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Main: Початок" vertex="1">
+          <mxGeometry height="50" width="120" x="100" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="init_main" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="int n = 0, choice&#xa;int* mas = nullptr&#xa;int* newmas = nullptr&#xa;srand(time(NULL))" vertex="1">
+          <mxGeometry height="70" width="160" x="80" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="loop_start_point" parent="1" style="shape=mxgraph.flowchart.start_2;strokeWidth=2;whiteSpace=wrap;html=1;" value="do" vertex="1">
+          <mxGeometry height="20" width="20" x="150" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="menu_out" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: Меню вибору&#xa;(1-Manual, 2-Rand, 0-Exit)" vertex="1">
+          <mxGeometry height="50" width="200" x="60" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="input_choice" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Ввід: cin &gt;&gt; choice" vertex="1">
+          <mxGeometry height="40" width="160" x="80" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="switch_choice" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="switch (choice)" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="case_2" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="mas = genMat(n)" vertex="1">
+          <mxGeometry height="40" width="120" x="260" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="merge_cases" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#000000;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="155" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="main_logic" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="Вивід: Оригінальний масив&#xa;outMat(mas, n)" vertex="1">
+          <mxGeometry height="50" width="180" x="70" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="calc_neg" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="negCount = countMat(mas, n)" vertex="1">
+          <mxGeometry height="40" width="180" x="70" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="out_neg" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Вивід: negCount" vertex="1">
+          <mxGeometry height="40" width="160" x="80" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="calc_new" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="count3rd = 0&#xa;newmas = newMat(mas, n, count3rd)" vertex="1">
+          <mxGeometry height="50" width="220" x="50" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="out_new" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="Вивід: Новий масив&#xa;outMat(newmas, count3rd)" vertex="1">
+          <mxGeometry height="50" width="180" x="70" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="cleanup" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="delMat(mas)&#xa;delMat(newmas)&#xa;system(&quot;pause&quot;)" vertex="1">
+          <mxGeometry height="60" width="160" x="80" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="loop_check" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="while (true)" vertex="1">
+          <mxGeometry height="40" width="120" x="100" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" edge="1" parent="1" source="start_main" target="init_main">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" edge="1" parent="1" source="init_main" target="loop_start_point">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" edge="1" parent="1" source="loop_start_point" target="menu_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" edge="1" parent="1" source="menu_out" target="input_choice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m5" edge="1" parent="1" source="input_choice" target="switch_choice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sw2" edge="1" parent="1" source="switch_choice" target="case_2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="440" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sw2_lbl" connectable="0" parent="sw2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="2" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c2" edge="1" parent="1" source="case_2" style="rounded=0;curved=0;" target="merge_cases">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c3" edge="1" parent="1" source="merge_cases" target="main_logic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" edge="1" parent="1" source="main_logic" target="calc_neg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" edge="1" parent="1" source="calc_neg" target="out_neg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" edge="1" parent="1" source="out_neg" target="calc_new">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" edge="1" parent="1" source="calc_new" target="out_new">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" edge="1" parent="1" source="out_new" target="cleanup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" edge="1" parent="1" source="cleanup" target="loop_check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" edge="1" parent="1" source="loop_check" style="rounded=0;curved=0;" target="loop_start_point">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="1030" />
+              <mxPoint x="40" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="start_new" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="int* newMat(...)" vertex="1">
+          <mxGeometry height="50" width="140" x="470" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="init_c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="count3rd = 0" vertex="1">
+          <mxGeometry height="40" width="100" x="490" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="loop_n1" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (int i = 2; i &lt; n; i += 3)" vertex="1">
+          <mxGeometry height="60" width="200" x="440" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="body_n1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="count3rd++" vertex="1">
+          <mxGeometry height="40" width="80" x="655" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="alloc_mem" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="newmas = new int[count3rd]&#xa;index = 0" vertex="1">
+          <mxGeometry height="50" width="180" x="450" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="loop_n2" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="for (int i = 2; i &lt; n; i += 3)" vertex="1">
+          <mxGeometry height="60" width="200" x="440" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="body_n2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="newmas[index++] = mas[i]" vertex="1">
+          <mxGeometry height="40" width="150" x="655" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="ret_new" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="return newmas" vertex="1">
+          <mxGeometry height="50" width="120" x="480" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="fn1" edge="1" parent="1" source="start_new" target="init_c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fn2" edge="1" parent="1" source="init_c3" target="loop_n1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fn3" edge="1" parent="1" source="loop_n1" target="body_n1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fn4" edge="1" parent="1" source="body_n1" style="rounded=0;curved=0;" target="loop_n1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="690" />
+              <mxPoint x="540" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fn5" edge="1" parent="1" source="loop_n1" target="alloc_mem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fn6" edge="1" parent="1" source="alloc_mem" target="loop_n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fn7" edge="1" parent="1" source="loop_n2" target="body_n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fn8" edge="1" parent="1" source="body_n2" style="rounded=0;curved=0;" target="loop_n2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="880" />
+              <mxPoint x="540" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fn9" edge="1" parent="1" source="loop_n2" target="ret_new">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
