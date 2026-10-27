@@ -1,0 +1,18 @@
+﻿<Window x:Class="Lab5.Tasks.Task2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5.Tasks"
+        mc:Ignorable="d"
+        Title="Task2" Height="auto" Width="auto">
+    <Grid>
+        <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="InfoText" Text="Демонстраційний текст" FontSize="16" Margin="0,0,0,15" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Сховати" Width="100" Height="30" Margin="5" Click="HideText_Click"/>
+                <Button Content="Показати" Width="100" Height="30" Margin="5" Click="ShowText_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,13 @@
+﻿<Window x:Class="TestingSystem.Views.StudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:TestingSystem.Views"
+        xmlns:loc="clr-namespace:TestingSystem.Infrastructure"
+        Title="{loc:T Win_Student}" Height="740" Width="1060" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <v:HeaderBar x:Name="Header" DockPanel.Dock="Top" />
+        <TabControl x:Name="Tabs">
+            <TabItem x:Name="WelcomeTab" Header="{loc:T Win_Student}" />
+        </TabControl>
+    </DockPanel>
+</Window>

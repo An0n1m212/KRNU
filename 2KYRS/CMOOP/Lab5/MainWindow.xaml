@@ -1,0 +1,26 @@
+﻿<Window x:Class="Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Лабораторна робота №5 — Главное меню" Height="450" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Оберіть завдання для пуска:" 
+                   FontSize="18" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Width="280">
+            <Button Content="Завдання 1 (Зміна тексту)" Margin="0,5" Height="35" Click="OpenTask1_Click"/>
+            <Button Content="Завдання 2 (Видимість текста)" Margin="0,5" Height="35" Click="OpenTask2_Click"/>
+            <Button Content="Завдання 3 (Управління TextBox)" Margin="0,5" Height="35" Click="OpenTask3_Click"/>
+            <Button Content="Завдання 4 (Ігра «Приховуй кнопки»)" Margin="0,5" Height="35" Click="OpenTask4_Click"/>
+            <Button Content="Завдання 5 (Піймай кнопку)" Margin="0,5" Height="35" Click="OpenTask5_Click"/>
+            <Button Content="Завдання 6 (Алхимія кольорів)" Margin="0,5" Height="35" Click="OpenTask6_Click"/>
+            <Button Content="Завдання 7 (Взлом сейфа)" Margin="0,5" Height="35" Click="OpenTask7_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

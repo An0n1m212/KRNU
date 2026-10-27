@@ -1,0 +1,35 @@
+﻿<Window x:Class="Lab7.Task1.Views.Login"
+    Background="{StaticResource BackgroundBrush}" 
+    Height="480" Title="Авторизація" Width="380" 
+    WindowStartupLocation="CenterScreen"  
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="25">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource TitleStyle}" Text="Вхід у систему"/>
+
+            <TextBlock Margin="0,5,0,0" Text="Логін або Електронна пошта:"/>
+            <TextBox Style="{StaticResource InputTextBoxStyle}" x:Name="txtUsername"/>
+
+            <TextBlock Text="Пароль:"/>
+            <PasswordBox Height="35" Margin="0,5,0,15" Padding="8,5" x:Name="txtPassword"/>
+
+            <Button Click="Login_Click" Content="УВІЙТИ" Style="{StaticResource MainButtonStyle}"/>
+
+            <TextBlock Foreground="Gray" HorizontalAlignment="Center" Margin="0,15,0,10" Text="Або увійдіть за допомогою:"/>
+
+            <UniformGrid Columns="3">
+                <Button Background="#DB4437" Click="SocialLogin_Click" Content="Google" Foreground="White" Height="32" Margin="2"/>
+                <Button Background="#4267B2" Click="SocialLogin_Click" Content="Facebook" Foreground="White" Height="32" Margin="2"/>
+                <Button Background="#1DA1F2" Click="SocialLogin_Click" Content="Twitter" Foreground="White" Height="32" Margin="2"/>
+            </UniformGrid>
+
+            <Separator Margin="0,20,0,15"/>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Text="Ще не маєте акаунту? " VerticalAlignment="Center"/>
+                <Button Background="Transparent" BorderThickness="0" Click="OpenRegister_Click" Content="Зареєструватися" Cursor="Hand" Foreground="{StaticResource PrimaryBrush}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

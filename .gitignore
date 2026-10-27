@@ -1,0 +1,23 @@
+.vs/
+[Dd]ebug/
+[Rr]elease/
+*.ipch
+*.aps
+*.ncb
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.tlog
+*.log
+
+# Временные файлы Office и Windows
+~$*
+~WRL*.tmp
+Thumbs.db
+
+# Резервные копии баз данных
+*.bak
+
+# Курсова робота з CMOOP зберігається окремо (D:\CourseWork), в git не трекається
+2KYRS/CMOOP/CourseWork/
