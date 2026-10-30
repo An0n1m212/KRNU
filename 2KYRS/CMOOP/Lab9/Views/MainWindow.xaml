@@ -1,0 +1,92 @@
+<Window x:Class="Lab9.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Список студентів" Height="560" Width="760" WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:StudentListViewModel xmlns:local="clr-namespace:Lab9.ViewModels"/>
+    </Window.DataContext>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель команд -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button Content="Додати студента" Width="150" Height="32" Margin="0,0,10,0"
+                    Command="{Binding AddCommand}" FontWeight="Bold"/>
+            <Button Content="Редагувати" Width="120" Height="32" Margin="0,0,10,0"
+                    Command="{Binding EditCommand}"/>
+            <Button Content="Видалити" Width="120" Height="32"
+                    Command="{Binding DeleteCommand}" Background="#E74C3C" Foreground="White"/>
+            <TextBlock x:Name="TxtCount" VerticalAlignment="Center" Margin="20,0,0,0"
+                       Text="{Binding Students.Count, Mode=OneWay, StringFormat='Записів: {0}'}"/>
+        </StackPanel>
+
+        <!-- Список студентів -->
+        <ListBox x:Name="StudentsList" Grid.Row="1"
+                 SelectionMode="Extended"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 SelectionChanged="StudentsList_SelectionChanged"
+                 AlternationCount="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10,7">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <!-- Зебра: непарний та парний рядок -->
+                                <Setter Property="Background" Value="#FFFFFF"/>
+                                <Style.Triggers>
+                                    <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                        <Setter Property="Background" Value="#EAF2F8"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                <!-- Прізвище та ім'я як єдине ціле -->
+                                <TextBlock Text="{Binding FullName}" FontWeight="Bold" FontSize="14"
+                                           Foreground="#2C3E50" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding AgeDisplay}" Margin="15,0,0,0" VerticalAlignment="Center" Foreground="#566573"/>
+                                <TextBlock Text="{Binding Gender, StringFormat=', {0}'}" VerticalAlignment="Center" Foreground="#7F8C8D"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Шаблон-заміщення для порожнього списку -->
+        <Border Grid.Row="1" x:Name="EmptyStatePanel"
+                Background="White" BorderBrush="#BDC3C7" BorderThickness="1">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <!-- Показ заміщення замість порожнього списку -->
+                        <DataTrigger Binding="{Binding Items.Count, ElementName=StudentsList}" Value="0">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Список порожній" FontSize="20" FontWeight="Bold" Foreground="#95A5A6"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Користувачів немає. Додайте студента за допомогою кнопки «Додати студента»."
+                           FontSize="13" Foreground="#B2BABB" HorizontalAlignment="Center" Margin="0,8,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <TextBlock Grid.Row="2" Margin="0,10,0,0" Foreground="#7F8C8D"
+                   Text="Для множинного видалення виділяйте рядки з Ctrl / Shift"/>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Students>
+  <Student>
+    <LastName>Шевченко</LastName>
+    <FirstName>Тарас</FirstName>
+    <Age>19</Age>
+    <Gender>Чоловіча</Gender>
+  </Student>
+  <Student>
+    <LastName>Ковальчук</LastName>
+    <FirstName>Марія</FirstName>
+    <Age>18</Age>
+    <Gender>Жіноча</Gender>
+  </Student>
+  <Student>
+    <LastName>Бондаренко</LastName>
+    <FirstName>Олександр</FirstName>
+    <Age>21</Age>
+    <Gender>Чоловіча</Gender>
+  </Student>
+  <Student>
+    <LastName>Гриценко</LastName>
+    <FirstName>Олена</FirstName>
+    <Age>22</Age>
+    <Gender>Жіноча</Gender>
+  </Student>
+</Students>
