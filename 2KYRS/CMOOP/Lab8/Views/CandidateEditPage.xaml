@@ -1,0 +1,40 @@
+﻿<Page x:Class="Lab8.CandidateEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      Title="CandidateEditPage">
+
+    <Grid Margin="20">
+        <GroupBox Header="Анкета кандидата" Padding="15" HorizontalAlignment="Center" VerticalAlignment="Top" Width="550">
+            <StackPanel>
+                <TextBlock Text="П.І.Б. кандидата:" FontWeight="Bold" Margin="0,5,0,2"/>
+                <TextBox Text="{Binding FullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25"/>
+
+                <TextBlock Text="Дата народження:" FontWeight="Bold" Margin="0,10,0,2"/>
+                <DatePicker SelectedDate="{Binding BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DisplayDateEnd="{x:Static sys:DateTime.Now}"/>
+
+                <TextBlock Text="Освіта:" FontWeight="Bold" Margin="0,10,0,2"/>
+                <ComboBox SelectedValue="{Binding Education, Mode=TwoWay}" SelectedValuePath="Content">
+                    <ComboBoxItem Content="Середня"/>
+                    <ComboBoxItem Content="Середня спеціальна"/>
+                    <ComboBoxItem Content="Вища"/>
+                </ComboBox>
+
+                <TextBlock Text="Знання іноземних мов:" FontWeight="Bold" Margin="0,10,0,2"/>
+                <TextBox Text="{Binding LanguageSkills, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         ToolTip="Приклад: Англійська (володію вільно), Німецька (читаю та перекладаю зі словником)" Height="25"/>
+
+                <TextBlock Text="Стаж роботи (років):" FontWeight="Bold" Margin="0,10,0,2"/>
+                <TextBox x:Name="TxtExp" Text="{Binding ExperienceYears, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25"/>
+
+                <CheckBox Content="Володію комп'ютером" IsChecked="{Binding KnowsComputer, Mode=TwoWay}" Margin="0,15,0,0"/>
+                <CheckBox Content="Наявність рекомендацій" IsChecked="{Binding HasRecommendations, Mode=TwoWay}" Margin="0,10,0,0"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                    <Button Content="Зберегти" Width="120" Height="35" Click="BtnSave_Click" Background="#2ECC71" Foreground="White" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <Button Content="Скасувати" Width="120" Height="35" Click="BtnCancel_Click" Background="#95A5A6" Foreground="White"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Page>
